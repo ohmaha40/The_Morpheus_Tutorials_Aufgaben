@@ -36,7 +36,10 @@ def zug(spieler_a, spieler_b):
                 spielbereich()
                 korrekt = 0
                 while korrekt == 0:
-                    a = (int(input(spieler_a.name + " Dein Zug bitte: "))-1)
+                    try:
+                        a = (int(input(spieler_a.name + " Dein Zug bitte: "))-1)
+                    except ValueError:
+                        continue
                     if liste[a] == str(a + 1):
                         liste[a] = "X"
                         korrekt = 1
@@ -52,7 +55,10 @@ def zug(spieler_a, spieler_b):
                 spielbereich()
                 korrekt = 0
                 while korrekt == 0:
-                    a = (int(input(spieler_b.name + " Dein Zug bitte: "))-1)
+                    try:
+                        a = (int(input(spieler_b.name + " Dein Zug bitte: "))-1)
+                    except ValueError:
+                        continue
                     if liste[a] == str(a + 1):
                         liste[a] = "O"
                         korrekt = 1
